@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
 const dataLine1 = {
   labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5', 'Día 6'], // Etiquetas de los días
   datasets: [{
-    label: 'Km recorridos en Semana 33',
-    data: [8, 8, 8, 8, 8, 8], // Datos de los km recorridos en cada día
+    label: 'Km recorridos en Semana 34',
+    data: [10, 10, 10, 10, 10, 10], // Datos de los km recorridos en cada día
     borderColor: 'rgba(75, 192, 192, 1)',
     fill: true,
     tension: 0.1
@@ -110,3 +110,4 @@ function actualizarDiasRestantes() {
   document.getElementById("Semana 2").appendChild(video4);
 
 });
+
