@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
 const dataLine1 = {
   labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5', 'Día 6'], // Etiquetas de los días
   datasets: [{
-    label: 'Km recorridos en Semana 34',
-    data: [10, 10, 10, 10, 10, 10], // Datos de los km recorridos en cada día
+    label: 'Km recorridos en Semana 35',
+    data: [12, 14, 20, 10, 17, 25], // Datos de los km recorridos en cada día
     borderColor: 'rgba(75, 192, 192, 1)',
     fill: true,
     tension: 0.1
@@ -14,10 +14,10 @@ const dataLine1 = {
 };
 
 const dataLine2 = {
-  labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5'], // Etiquetas de los días
+  labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5', 'Día 6'], // Etiquetas de los días
   datasets: [{
-    label: 'Km recorridos en Semana 22',
-    data: [12, 18, 10, 10, 10, 15], // Datos de los km recorridos en cada día
+    label: 'Km recorridos en Semana 36',
+    data: [14, 11, 25, 11, 18, 27], // Datos de los km recorridos en cada día
     borderColor: 'rgba(153, 102, 255, 1)',
     fill: true,
     tension: 0.1
@@ -110,4 +110,3 @@ function actualizarDiasRestantes() {
   document.getElementById("Semana 2").appendChild(video4);
 
 });
-
