@@ -1,58 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
   actualizarDiasRestantes();
-  setInterval(actualizarDiasRestantes, 24*60*60*1000); // Actualizar diario
-  //Datos para el gráfico de líneas
-const dataLine1 = {
-  labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5', 'Día 6'], // Etiquetas de los días
-  datasets: [{
-    label: 'Km recorridos en Semana 8',
-    data: [12, 12, 16, 10, 10, 25], // Datos de los km recorridos en cada día
-    borderColor: 'rgba(75, 192, 192, 1)',
-    fill: true,
-    tension: 0.1
-  }]
-};
+  setInterval(actualizarDiasRestantes, 24 * 60 * 60 * 1000); // actualizar diario
 
-const dataLine2 = {
-  labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5', 'Día 6'], // Etiquetas de los días
-  datasets: [{
-    label: 'Km recorridos en Semana 9',
-    data: [11, 13, 12, 14.8, 12, 13], // Datos de los km recorridos en cada día
-    borderColor: 'rgba(153, 102, 255, 1)',
-    fill: true,
-    tension: 0.1
-  }]
-};
+  // --- Datos ---
+  const dataLine1 = {
+    labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5'],
+    datasets: [{
+      label: 'Km recorridos en Semana 10',
+      data: [6, 5, 5, 4, 42],
+      borderColor: 'rgba(75, 192, 192, 1)',
+      fill: true,
+      tension: 0.1,
+      hoverBackgroundColor: 'rgba(75, 192, 192, 0.2)',      
+    }]
+  };
 
-// Configuración del gráfico de líneas
+  const dataLine2 = {
+    labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4','Día 5'],
+    datasets: [{
+      label: 'Km recorridos en Semana 11',
+      data: [15, 12, 16, 10, 35],
+      borderColor: 'rgba(153, 102, 255, 1)',
+      fill: true,
+      tension: 0.1
+    }]
+  };
+  // --- Configuración base ---
+  const baseConfig = {
+    type: 'line',
+    options: { scales: { y: { beginAtZero: true } } }
+  };
 
+  // --- Crear gráficos ---
+  new Chart(document.getElementById('myChart-line-1'), { ...baseConfig, data: dataLine1 });
+  new Chart(document.getElementById('myChart-line-2'), { ...baseConfig, data: dataLine2 });
+  new Chart(document.getElementById('myChart-line-3'), { ...baseConfig, data: dataLine3 });
 
-// Seleccione los contextos de los <canvas> y cree los gráficos
-const myChartLine1 = new Chart(document.getElementById('myChart-line-1'), {
-  type: 'line',
-  data: dataLine1, // Puede cambiar esto a dataLine2 para mostrar el gráfico de la segunda sección
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
-
- const myChartLine2 = new Chart(document.getElementById('myChart-line-2'), {
-  type: 'line',
-  data: dataLine2,
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
-
-function actualizarDiasRestantes() {
+  // --- Función de cuenta regresiva ---
+ function actualizarDiasRestantes() {
   // Fecha objetivo fija
   const objetivoDate = new Date('2026-03-14');
   const currentDate = new Date();
@@ -64,7 +49,6 @@ function actualizarDiasRestantes() {
   const countdownElement = document.getElementById('countdown');
   countdownElement.innerHTML = `<span class="cuenta-regresiva-titulo">CUENTA REGRESIVA</span><br><span class="cuenta-regresiva-numero">${days}d : ${hours}h : ${minutes}m : ${seconds}s</span>`;
 }
-
 
   // Crear dos nuevas instancias de HTMLVideoElement para cada sección
   let Semana_1_video_1 = document.createElement("video");
@@ -102,3 +86,4 @@ function actualizarDiasRestantes() {
   document.getElementById("Semana 2").appendChild(video4);
 
 });
+
