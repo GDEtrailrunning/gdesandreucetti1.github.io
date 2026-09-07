@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-  //actualizarDiasRestantes();
-  //setInterval(actualizarDiasRestantes, 24 * 60 * 60 * 1000); // actualizar diario
+  actualizarDiasRestantes();
+  setInterval(actualizarDiasRestantes, 24 * 60 * 60 * 1000); // actualizar diario
+
   // --- Datos ---
   const dataLine1 = {
     labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5', 'Día 6'],
     datasets: [{
-      label: 'Km recorridos en Semana 34',
-      data: [10, 11, 12, 9, 10, 26],
+      label: 'Km recorridos en Semana 36',
+      data: [6, 8, 8, 8, 9, 14],
       borderColor: 'rgba(75, 192, 192, 1)',
       fill: true,
       tension: 0.1,
@@ -15,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const dataLine2 = {
-    labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5', 'Día 6'],
+    labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4','Día 5'],
     datasets: [{
-      label: 'Km recorridos en Semana 35',
-      data: [8, 9, 10, 8, 8, 19],
+      label: 'Km recorridos en Semana 37',
+      data: [6, 5, 4, 4, 58],
       borderColor: 'rgba(153, 102, 255, 1)',
       fill: true,
       tension: 0.1
